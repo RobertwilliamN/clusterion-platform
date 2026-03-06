@@ -3,17 +3,18 @@ kind: Application
 metadata:
   name: clusterion-root
   namespace: argocd
+
 spec:
   project: default
 
   source:
     repoURL: https://github.com/RobertwilliamN/clusterion-platform.git
     targetRevision: main
-    path: apps
+    path: bootstrap
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: argocd
 
   syncPolicy:
     automated:
