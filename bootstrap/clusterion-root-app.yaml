@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/SEU_USUARIO/clusterion-platform.git
+    repoURL: https://github.com/RobertwilliamN/clusterion-platform.git
     targetRevision: main
     path: apps
 
