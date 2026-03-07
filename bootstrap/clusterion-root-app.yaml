@@ -1,25 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: AppProject
 metadata:
-  name: clusterion-root
+  name: clusterion
   namespace: argocd
 
 spec:
-  project: clusterion
+  sourceRepos:
+  - '*'
 
-  source:
-    repoURL: https://github.com/RobertwilliamN/clusterion-platform.git
-    targetRevision: main
-    path: apps
-
-  destination:
+  destinations:
+  - namespace: '*'
     server: https://kubernetes.default.svc
-    namespace: argocd
 
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
 
-    syncOptions:
-      - CreateNamespace=true
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
