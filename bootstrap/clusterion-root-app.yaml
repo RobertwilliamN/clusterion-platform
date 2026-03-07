@@ -5,12 +5,12 @@ metadata:
   namespace: argocd
 
 spec:
-  project: default
+  project: clusterion
 
   source:
     repoURL: https://github.com/RobertwilliamN/clusterion-platform.git
     targetRevision: main
-    path: bootstrap
+    path: apps
 
   destination:
     server: https://kubernetes.default.svc
