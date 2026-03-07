@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: clusterion
+  namespace: argocd
+
+spec:
+  description: Clusterion GitOps Project
+
+  sourceRepos:
+    - https://github.com/RobertwilliamN/clusterion-platform.git
+
+  destinations:
+    - namespace: '*'
+      server: https://kubernetes.default.svc
+
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
