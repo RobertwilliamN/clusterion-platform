@@ -21,3 +21,13 @@ spec:
   namespaceResourceWhitelist:
     - group: '*'
       kind: '*'
+
+  namespaceResourceBlacklist: []
+
+  roles: []
+
+  orphanedResources:
+    warn: false
+
+  sourceNamespaces:
+    - argocd
