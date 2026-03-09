@@ -23,13 +23,6 @@ spec:
           service:
             type: NodePort
 
-          additionalDataSources:
-            - name: Prometheus
-              type: prometheus
-              access: proxy
-              url: http://observability-kube-prometh-prometheus.monitoring.svc:9090
-              isDefault: true
-
         prometheus:
           service:
             type: NodePort
